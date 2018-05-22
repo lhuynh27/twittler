@@ -11,8 +11,11 @@
   <body>
     <header class="primary-header container group">
       <h1 class="logo">
-        <a href="index.html">Twittler</a>
+        <a>Twittler</a>
       </h1>
+      <h3 class="refresh">
+        <a href="index.html">New Tweets</a>
+      </h3> 
     </header>  
 
     <script>
@@ -20,7 +23,6 @@
       //node comes out as object
       $(document).ready(function(){
         var $body = $('body');
-        $body.html('');
 
         var users = function(tweet){
           var $user = $('<div class="username"></div>');
