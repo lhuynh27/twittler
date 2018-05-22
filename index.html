@@ -11,21 +11,22 @@
   <body>
     <header class="primary-header container group">
       <h1 class="logo">
-        <a>Twittler</a>
+        <a href="index.html">Twittler</a>
       </h1>
       <h3 class="refresh">
         <a href="index.html">New Tweets</a>
       </h3> 
-    </header>  
+    </header>
+    <div class="tweet-storage"></div>
 
     <script>
 
       //node comes out as object
       $(document).ready(function(){
-        var $body = $('body');
+        var $storage = $('.tweet-storage');
 
         var users = function(tweet){
-          var $user = $('<div class="username"></div>');
+          var $user = $(`<div class="username ${tweet.user}"></div>`);
           $user.text('@' + tweet.user);
           return $user;
         }
@@ -41,16 +42,34 @@
           $time.text(tweet.created_at);
           return $time;
         }
-        
+
+        var getUserTweets = function(event){
+          $storage.html('');
+          var username = $(this).attr('class').split(' ')[1];
+          var index = streams.users[username].length - 1;
+          while(index >= 0){
+            var tweet = streams.users[username][index];
+            var $tweet = $('<div class="tweet"></div>');
+            users(tweet).appendTo($tweet);
+            message(tweet).appendTo($tweet);
+            time(tweet).appendTo($tweet);
+            $tweet.appendTo($storage);
+            index -= 1;
+           } 
+        }
+
+        $(document).on('click', '.username', getUserTweets);
+
         var index = streams.home.length - 1; //how many tweets already generated and put into streams
         while(index >= 0){ //post backwards, last tweet first
           var tweet = streams.home[index];
           var $tweet = $('<div class="tweet"></div>');
-          users(tweet).appendTo($tweet);
+          var $username = users(tweet);
+          $username.appendTo($tweet)
           message(tweet).appendTo($tweet);
           time(tweet).appendTo($tweet);
           //$tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
+          $tweet.appendTo($storage);
           index -= 1;
         }
       });
