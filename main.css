@@ -47,6 +47,23 @@ table {
   border-spacing: 0;
 }
 
+/* Clearfix */
+
+.group:after,
+.group:before {
+  content: "";
+  display: table;
+}
+
+.group:after {
+  clear: both;
+}
+
+.group:before {
+  clear: both;
+  *zoom: 1;
+}
+
 
 /*
 ------------------------------------
@@ -59,21 +76,13 @@ body {
   background-color: #85C1E9;
 } 
 
-.header {
-  display: block;
-  background-color: #2471A3;
-  padding: 20px;
-}
-
-.header a {
+.logo {
+  border: 5px solid #000000;
   float: left;
-  text-align: left;
-  font-size: 25px;
+  font-size: 40px;
   font-weight: bold;
-}
-
-.header-right {
-  float: right;
+  line-height: 44px;
+  padding: 20px;
 }
 
 .tweet{
