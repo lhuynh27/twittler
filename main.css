@@ -103,7 +103,7 @@ a:hover {
   font-family: Helvetica, Arial;
 }
 
-.username {
+.username:hover {
   color: #FAFAFA;
   cursor: pointer;
 }
