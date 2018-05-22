@@ -8,17 +8,13 @@
     <link rel="stylesheet" href="main.css">
   </head>
 
-  <header>  
-    <!-- Header -->
-  <div class="header">
-    <a href="index.html" class="logo">Twittler</a></div>
-    <div class="header-right">
-      <a href="index.html">Refresh Tweets</a>
-    </div>
-  </div>
-  </header>
-
   <body>
+    <header class="primary-header container group">
+      <h1 class="logo">
+        <a href="index.html">Twittler</a>
+      </h1>
+    </header>  
+
     <script>
 
       //node comes out as object
@@ -43,7 +39,7 @@
           $time.text(tweet.created_at);
           return $time;
         }
-
+        
         var index = streams.home.length - 1; //how many tweets already generated and put into streams
         while(index >= 0){ //post backwards, last tweet first
           var tweet = streams.home[index];
