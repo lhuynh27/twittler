@@ -56,18 +56,29 @@ MY OWN STYLING CODE
 
 
 body {
-  background-color: ##BB8FCE;
-  text-align: center;
-  font-family: 400 16px/22px Arial, sans-serif;
+  background-color: #85C1E9;
 } 
 
-div {
-  background-color: #FFFFFF;
-  margin: 10px;
-  padding: 10px;
-  border-style: solid;
-  border-width: 2px;
-  width: 500px;
-  margin-left: 25%;
-}rgin-left: 25%;
+.header {
+  display: block;
+  background-color: #2471A3;
+  padding: 20px;
+}
+
+.header a {
+  float: left;
+  text-align: left;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header-right {
+  float: right;
+}
+
+.tweet{
+  text-align: left;
+  margin: 5px;
+  padding: 5px;
+  margin-left: 40%;
 }
