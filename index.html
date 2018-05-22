@@ -8,19 +8,20 @@
     <link rel="stylesheet" href="main.css">
   </head>
 
-  <body>
-
+  <header>  
     <!-- Header -->
-    <header class="main header">
-      <h1>
-        <a href="index.html">Twittler</a>
-      </h1>
+  <div class="header">
+    <a href="index.html" class="logo">Twittler</a></div>
+    <div class="header-right">
+      <a href="index.html">Refresh Tweets</a>
+    </div>
+  </div>
+  </header>
 
-      <h3>
-        <a href="index.html">Refresh Tweets</a>
-      </h3> 
+  <body>
     <script>
 
+      //node comes out as object
       $(document).ready(function(){
         var $body = $('body');
         $body.html('');
@@ -55,8 +56,6 @@
           index -= 1;
         }
       });
-
-//node comes out as object
 
     </script>
   </body>
